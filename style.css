@@ -17,14 +17,13 @@
 
 /* Change the color of links on hover */
 .topnav a:hover {
-  background-color: #04aa6d;
-  color: white;
+  background-color: #183cb3;
+  
 }
 
 /* Add a color to the active/current link */
 .topnav a.active {
-  background-color: #ddd;
-  color: black;
+  color:white
 }
 
 /* Welcome Section */
@@ -72,4 +71,8 @@
   border-radius: 10px;
   padding: 50px;
   margin: 20px;
+}
+
+.deviceName {
+  text-align: center;
 }
