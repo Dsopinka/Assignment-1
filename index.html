@@ -10,30 +10,35 @@
   <div class="datefont" id="date"></div>
   <body>
     <main>
-      <script src="script.js"></script>
       <div class="topnav">
         <a class="active" href="#home">Home</a>
         <a href="profile.html">Profile</a>
       </div>
       <h2 class="deviceName">Device Name: Home</h2>
+      <p class="light-setting">
+        Lighting Mode:&nbsp;<strong id="selected-option">Off</strong>&nbsp;
+        Notifications:&nbsp;<strong id="selected-option2">Off</strong>&nbsp;
+        Tempature:&nbsp;<strong id="selected-option3">19°C</strong>
+      </p>
       <div class="container">
         <div class="light-mode">
           <h2 class="light-title">Lighting Mode:</h2>
           <form>
-            <input type="radio" id="off" name="selectOne" value="off" checked />
-            <label for="off">Off</label><br />
-            <input type="radio" id="away" name="selectOne" value="away" />
-            <label for="away">Away</label><br />
-            <input type="radio" id="eco" name="selectOne" value="eco" />
-            <label for="eco">Eco</label><br />
-            <input type="radio" id="full" name="selectOne" value="full" />
-            <label for="eco">Full</label><br />
+            <input type="radio" id="off" name="selectOne" value="Off" checked />
+            <label for="off" class="radio">Off</label><br />
+            <input type="radio" id="away" name="selectOne" value="Away" />
+            &nbsp;&nbsp;&nbsp;&nbsp;<label for="away" class="radio">Away</label
+            ><br />
+            <input type="radio" id="eco" name="selectOne" value="Eco" />
+            <label for="eco" class="radio">Eco</label><br />
+            <input type="radio" id="full" name="selectOne" value="Full" />
+            <label for="full" class="radio">Full</label><br />
             <input type="button" id="save" value="Save" />
           </form>
         </div>
         <div class="info">
           <h2>Personal Information:</h2>
-          <form>
+          <form class="postTemp">
             <label for="postal-code">Postal Code:</label>
             <input
               type="text"
@@ -44,20 +49,28 @@
               title="Please enter a valid Canadian postal code in the format A1A 1A1"
             /><br />
             <label>Notifications:</label>
-            <input type="radio" name="oneOption" id="on" required />
-            <label for="on">On</label>
-            <input type="radio" name="oneOption" id="off" />
-            <label for="off">Off</label><br />
+            <input type="radio" name="oneOption" id="On" value="On" required />
+            <label for="On" class="radio">On</label>
+            <input type="radio" name="oneOption" id="Off" value="Off" checked />
+            <label for="Off" class="radio">Off</label><br />
 
             <label>Tempature Select:</label>
             <span>10C</span>
-            <input type="range" min="10" max="25" step="0.5" value="19" />
+            <input
+              type="range"
+              id="temp-slider"
+              min="10"
+              max="25"
+              step="0.5"
+              value="19"
+            />
             <span>25C</span><br />
-            <input type="submit" value="Save" />
+            <input type="button" id="submit-3" value="Save" />
             <input type="reset" />
           </form>
         </div>
       </div>
+      <script src="script.js"></script>
     </main>
   </body>
 </html>

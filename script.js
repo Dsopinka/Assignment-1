@@ -1,4 +1,4 @@
-window.onload = function () {
+window.addEventListener("DOMContentLoaded", (event) => {
   const dateDisplay = document.getElementById("date");
 
   const date = new Date();
@@ -13,23 +13,33 @@ window.onload = function () {
     month + 1
   }-${day}<br> Current Time: ${hours}:${minutes}`;
 
-  const password = document.getElementById("password");
-  const confirmPassword = document.getElementById("confirm-password");
+  const form = document.querySelector("form");
+  const submitButton2 = document.getElementById("save");
 
-  const submitButton = document.querySelector("button[type= 'submit']");
-  submitButton.addEventListener("click", function (event) {
-    if (password.value !== confirmPassword.value) {
-      event.preventDefault();
-      alert("Passwords do not match");
-    }
+  submitButton2.addEventListener("click", (event) => {
+    event.preventDefault();
+    const selectedValue = document.querySelector(
+      'input[name="selectOne"]:checked'
+    ).value;
+    const selectedOption = document.getElementById("selected-option");
+    selectedOption.innerHTML = "<strong>" + selectedValue + "</strong>";
+    selectedOption.textContent = selectedValue;
+  });
+  const form2 = document.querySelector(".postTemp");
+  const submitButton3 = document.getElementById("submit-3");
+  submitButton3.addEventListener("click", (event) => {
+    const selectedValue2 = document.querySelector(
+      'input[name="oneOption"]:checked'
+    ).value;
+    const selectedOption2 = document.getElementById("selected-option2");
+    selectedOption2.innerHTML = "<strong>" + selectedValue2 + "</strong>";
+    selectedOption2.textContent = selectedValue2;
   });
 
-  function validateEmail() {
-    var email = document.getElementById("email").value;
-    var re =
-      /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
-    if (!re.test(email)) {
-      alert("Invalid Email Address");
-    }
-  }
-};
+  const slider = document.querySelector("#temp-slider");
+  const selectedOption3 = document.querySelector("#selected-option3");
+
+  slider.addEventListener("input", () => {
+    selectedOption3.innerHTML = slider.value + "°C";
+  });
+});
